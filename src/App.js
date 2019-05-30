@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import ReactDOM from "react-dom";
+
+const fizzFuzz = () => {
+  
+  const iteratorData = [];
+
+  // Outer loop to create parent
+  for (let i = 1; i <= 100; i++) {
+    if (i%3 === 0){
+      //iteratorData.splice(i);
+      iteratorData[i] = 'Fizz\n'
+    }
+
+    if (i%5 === 0){
+     // iteratorData.splice(i);
+      iteratorData[i] = 'Buzz\n'
+    }
+
+    if (i%5 === 0 && i%3 === 0){
+      //iteratorData.splice(i);
+      iteratorData[i] = 'FizzBuzz\n'
+    }
+
+    if (i%5 !== 0 && i%3 !== 0){
+      iteratorData[i] = i + '\n';
+    }
+
+  }
+   
+  return iteratorData;
+}
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     {fizzFuzz()}
     </div>
   );
 }
+
 
 export default App;
